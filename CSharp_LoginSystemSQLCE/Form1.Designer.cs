@@ -47,9 +47,19 @@
             this.txtRegisterConfirmPassword = new System.Windows.Forms.TextBox();
             this.txtRegisterEmail = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtSMTPPassword = new System.Windows.Forms.TextBox();
+            this.txtSMTPAddress = new System.Windows.Forms.TextBox();
+            this.txtSMTPUsername = new System.Windows.Forms.TextBox();
+            this.numUDSMTPPort = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -151,6 +161,14 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.numUDSMTPPort);
+            this.tabPage4.Controls.Add(this.txtSMTPUsername);
+            this.tabPage4.Controls.Add(this.txtSMTPAddress);
+            this.tabPage4.Controls.Add(this.txtSMTPPassword);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(276, 235);
@@ -233,6 +251,76 @@
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(38, 58);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "SMTP Address: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(38, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Port: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(38, 110);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Email Username: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(38, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Email Password: ";
+            // 
+            // txtSMTPPassword
+            // 
+            this.txtSMTPPassword.Location = new System.Drawing.Point(131, 128);
+            this.txtSMTPPassword.Name = "txtSMTPPassword";
+            this.txtSMTPPassword.PasswordChar = '*';
+            this.txtSMTPPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtSMTPPassword.TabIndex = 4;
+            // 
+            // txtSMTPAddress
+            // 
+            this.txtSMTPAddress.Location = new System.Drawing.Point(131, 53);
+            this.txtSMTPAddress.Name = "txtSMTPAddress";
+            this.txtSMTPAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtSMTPAddress.TabIndex = 5;
+            // 
+            // txtSMTPUsername
+            // 
+            this.txtSMTPUsername.Location = new System.Drawing.Point(131, 103);
+            this.txtSMTPUsername.Name = "txtSMTPUsername";
+            this.txtSMTPUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtSMTPUsername.TabIndex = 6;
+            // 
+            // numUDSMTPPort
+            // 
+            this.numUDSMTPPort.Location = new System.Drawing.Point(131, 78);
+            this.numUDSMTPPort.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numUDSMTPPort.Name = "numUDSMTPPort";
+            this.numUDSMTPPort.Size = new System.Drawing.Size(100, 20);
+            this.numUDSMTPPort.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +334,9 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,6 +362,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numUDSMTPPort;
+        private System.Windows.Forms.TextBox txtSMTPUsername;
+        private System.Windows.Forms.TextBox txtSMTPAddress;
+        private System.Windows.Forms.TextBox txtSMTPPassword;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 
