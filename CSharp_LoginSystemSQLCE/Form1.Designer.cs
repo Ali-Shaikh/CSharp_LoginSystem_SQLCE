@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,30 +37,40 @@
             this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.txtRegisterEmail = new System.Windows.Forms.TextBox();
+            this.txtRegisterConfirmPassword = new System.Windows.Forms.TextBox();
+            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
+            this.txtRegisterUsername = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtRegisterUsername = new System.Windows.Forms.TextBox();
-            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
-            this.txtRegisterConfirmPassword = new System.Windows.Forms.TextBox();
-            this.txtRegisterEmail = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtSMTPPassword = new System.Windows.Forms.TextBox();
-            this.txtSMTPAddress = new System.Windows.Forms.TextBox();
-            this.txtSMTPUsername = new System.Windows.Forms.TextBox();
             this.numUDSMTPPort = new System.Windows.Forms.NumericUpDown();
+            this.txtSMTPUsername = new System.Windows.Forms.TextBox();
+            this.txtSMTPAddress = new System.Windows.Forms.TextBox();
+            this.txtSMTPPassword = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.loginsDataSet = new CSharp_LoginSystemSQLCE.loginsDataSet();
+            this.loginsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loginsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -150,8 +161,85 @@
             this.tabPage2.Text = "Register";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(105, 204);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            // 
+            // txtRegisterEmail
+            // 
+            this.txtRegisterEmail.Location = new System.Drawing.Point(105, 162);
+            this.txtRegisterEmail.Name = "txtRegisterEmail";
+            this.txtRegisterEmail.Size = new System.Drawing.Size(130, 20);
+            this.txtRegisterEmail.TabIndex = 7;
+            // 
+            // txtRegisterConfirmPassword
+            // 
+            this.txtRegisterConfirmPassword.Location = new System.Drawing.Point(105, 126);
+            this.txtRegisterConfirmPassword.Name = "txtRegisterConfirmPassword";
+            this.txtRegisterConfirmPassword.PasswordChar = '*';
+            this.txtRegisterConfirmPassword.Size = new System.Drawing.Size(130, 20);
+            this.txtRegisterConfirmPassword.TabIndex = 6;
+            // 
+            // txtRegisterPassword
+            // 
+            this.txtRegisterPassword.Location = new System.Drawing.Point(105, 90);
+            this.txtRegisterPassword.Name = "txtRegisterPassword";
+            this.txtRegisterPassword.PasswordChar = '*';
+            this.txtRegisterPassword.Size = new System.Drawing.Size(130, 20);
+            this.txtRegisterPassword.TabIndex = 5;
+            // 
+            // txtRegisterUsername
+            // 
+            this.txtRegisterUsername.Location = new System.Drawing.Point(105, 54);
+            this.txtRegisterUsername.Name = "txtRegisterUsername";
+            this.txtRegisterUsername.Size = new System.Drawing.Size(130, 20);
+            this.txtRegisterUsername.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 166);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Email: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Confirm: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(38, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Password: ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Username: ";
+            // 
             // tabPage3
             // 
+            this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.loginsDataGridView);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(276, 235);
@@ -176,139 +264,6 @@
             this.tabPage4.Text = "Configuraton";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Username: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Password: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Confirm: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 166);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Email: ";
-            // 
-            // txtRegisterUsername
-            // 
-            this.txtRegisterUsername.Location = new System.Drawing.Point(105, 54);
-            this.txtRegisterUsername.Name = "txtRegisterUsername";
-            this.txtRegisterUsername.Size = new System.Drawing.Size(130, 20);
-            this.txtRegisterUsername.TabIndex = 4;
-            // 
-            // txtRegisterPassword
-            // 
-            this.txtRegisterPassword.Location = new System.Drawing.Point(105, 90);
-            this.txtRegisterPassword.Name = "txtRegisterPassword";
-            this.txtRegisterPassword.PasswordChar = '*';
-            this.txtRegisterPassword.Size = new System.Drawing.Size(130, 20);
-            this.txtRegisterPassword.TabIndex = 5;
-            // 
-            // txtRegisterConfirmPassword
-            // 
-            this.txtRegisterConfirmPassword.Location = new System.Drawing.Point(105, 126);
-            this.txtRegisterConfirmPassword.Name = "txtRegisterConfirmPassword";
-            this.txtRegisterConfirmPassword.PasswordChar = '*';
-            this.txtRegisterConfirmPassword.Size = new System.Drawing.Size(130, 20);
-            this.txtRegisterConfirmPassword.TabIndex = 6;
-            // 
-            // txtRegisterEmail
-            // 
-            this.txtRegisterEmail.Location = new System.Drawing.Point(105, 162);
-            this.txtRegisterEmail.Name = "txtRegisterEmail";
-            this.txtRegisterEmail.Size = new System.Drawing.Size(130, 20);
-            this.txtRegisterEmail.TabIndex = 7;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(105, 204);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 8;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 58);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "SMTP Address: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(38, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Port: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(38, 110);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Email Username: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(38, 135);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Email Password: ";
-            // 
-            // txtSMTPPassword
-            // 
-            this.txtSMTPPassword.Location = new System.Drawing.Point(131, 128);
-            this.txtSMTPPassword.Name = "txtSMTPPassword";
-            this.txtSMTPPassword.PasswordChar = '*';
-            this.txtSMTPPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtSMTPPassword.TabIndex = 4;
-            // 
-            // txtSMTPAddress
-            // 
-            this.txtSMTPAddress.Location = new System.Drawing.Point(131, 53);
-            this.txtSMTPAddress.Name = "txtSMTPAddress";
-            this.txtSMTPAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtSMTPAddress.TabIndex = 5;
-            // 
-            // txtSMTPUsername
-            // 
-            this.txtSMTPUsername.Location = new System.Drawing.Point(131, 103);
-            this.txtSMTPUsername.Name = "txtSMTPUsername";
-            this.txtSMTPUsername.Size = new System.Drawing.Size(100, 20);
-            this.txtSMTPUsername.TabIndex = 6;
-            // 
             // numUDSMTPPort
             // 
             this.numUDSMTPPort.Location = new System.Drawing.Point(131, 78);
@@ -320,6 +275,107 @@
             this.numUDSMTPPort.Name = "numUDSMTPPort";
             this.numUDSMTPPort.Size = new System.Drawing.Size(100, 20);
             this.numUDSMTPPort.TabIndex = 7;
+            // 
+            // txtSMTPUsername
+            // 
+            this.txtSMTPUsername.Location = new System.Drawing.Point(131, 103);
+            this.txtSMTPUsername.Name = "txtSMTPUsername";
+            this.txtSMTPUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtSMTPUsername.TabIndex = 6;
+            // 
+            // txtSMTPAddress
+            // 
+            this.txtSMTPAddress.Location = new System.Drawing.Point(131, 53);
+            this.txtSMTPAddress.Name = "txtSMTPAddress";
+            this.txtSMTPAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtSMTPAddress.TabIndex = 5;
+            // 
+            // txtSMTPPassword
+            // 
+            this.txtSMTPPassword.Location = new System.Drawing.Point(131, 128);
+            this.txtSMTPPassword.Name = "txtSMTPPassword";
+            this.txtSMTPPassword.PasswordChar = '*';
+            this.txtSMTPPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtSMTPPassword.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(38, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Email Password: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(38, 110);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Email Username: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(38, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Port: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(38, 58);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "SMTP Address: ";
+            // 
+            // loginsDataSet
+            // 
+            this.loginsDataSet.DataSetName = "loginsDataSet";
+            this.loginsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // loginsBindingSource
+            // 
+            this.loginsBindingSource.DataMember = "Logins";
+            this.loginsBindingSource.DataSource = this.loginsDataSet;
+            // 
+            // loginsDataGridView
+            // 
+            this.loginsDataGridView.AutoGenerateColumns = false;
+            this.loginsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loginsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.loginsDataGridView.DataSource = this.loginsBindingSource;
+            this.loginsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.loginsDataGridView.Name = "loginsDataGridView";
+            this.loginsDataGridView.Size = new System.Drawing.Size(276, 235);
+            this.loginsDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Username";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Username";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Password";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // Form1
             // 
@@ -334,9 +390,13 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,6 +430,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView loginsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.BindingSource loginsBindingSource;
+        private loginsDataSet loginsDataSet;
     }
 }
 
