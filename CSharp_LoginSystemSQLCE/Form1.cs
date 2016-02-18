@@ -27,6 +27,8 @@ namespace CSharp_LoginSystemSQLCE
         {
             // TODO: This line of code loads data into the 'usersDataSet.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.usersDataSet.User);
+            // TODO: This line of code loads data into the 'usersDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.usersDataSet.User);
 
 
         }
@@ -78,7 +80,7 @@ namespace CSharp_LoginSystemSQLCE
             //If all is well, create the new user!
             else
             {
-                usersDataSet.UserRow newUserRow = usersDataSet.User.NewUserRow();
+                UsersDataSet.UserRow newUserRow = usersDataSet.User.NewUserRow();
 
                 string EncryptedPass = HashPass(password);
                 newUserRow.Username = username;
@@ -174,6 +176,14 @@ namespace CSharp_LoginSystemSQLCE
                     break;
                 }
             }
+
+        }
+
+        private void userBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.userBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.usersDataSet);
 
         }
     }

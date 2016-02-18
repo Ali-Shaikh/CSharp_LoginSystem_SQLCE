@@ -47,7 +47,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.userDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.numUDSMTPPort = new System.Windows.Forms.NumericUpDown();
             this.txtSMTPUsername = new System.Windows.Forms.TextBox();
@@ -57,22 +56,23 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.usersDataSet = new CSharp_LoginSystemSQLCE.UsersDataSet();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTableAdapter = new CSharp_LoginSystemSQLCE.UsersDataSetTableAdapters.UserTableAdapter();
             this.tableAdapterManager = new CSharp_LoginSystemSQLCE.UsersDataSetTableAdapters.TableAdapterManager();
+            this.userDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersDataSet = new CSharp_LoginSystemSQLCE.usersDataSet();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -252,21 +252,6 @@
             this.tabPage3.Text = "Database";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // userDataGridView
-            // 
-            this.userDataGridView.AutoGenerateColumns = false;
-            this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.userDataGridView.DataSource = this.userBindingSource;
-            this.userDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.userDataGridView.Name = "userDataGridView";
-            this.userDataGridView.Size = new System.Drawing.Size(276, 235);
-            this.userDataGridView.TabIndex = 0;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.numUDSMTPPort);
@@ -354,6 +339,16 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "SMTP Address: ";
             // 
+            // usersDataSet
+            // 
+            this.usersDataSet.DataSetName = "UsersDataSet";
+            this.usersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.usersDataSet;
+            // 
             // userTableAdapter
             // 
             this.userTableAdapter.ClearBeforeFill = true;
@@ -363,6 +358,21 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = CSharp_LoginSystemSQLCE.UsersDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UserTableAdapter = this.userTableAdapter;
+            // 
+            // userDataGridView
+            // 
+            this.userDataGridView.AutoGenerateColumns = false;
+            this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.userDataGridView.DataSource = this.userBindingSource;
+            this.userDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.userDataGridView.Name = "userDataGridView";
+            this.userDataGridView.Size = new System.Drawing.Size(276, 235);
+            this.userDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -382,16 +392,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Email";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.usersDataSet;
-            // 
-            // usersDataSet
-            // 
-            this.usersDataSet.DataSetName = "UsersDataSet";
-            this.usersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,12 +407,12 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,7 +446,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private usersDataSet usersDataSet;
+        private UsersDataSet usersDataSet;
         private System.Windows.Forms.BindingSource userBindingSource;
         private UsersDataSetTableAdapters.UserTableAdapter userTableAdapter;
         private UsersDataSetTableAdapters.TableAdapterManager tableAdapterManager;
