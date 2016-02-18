@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.userDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.numUDSMTPPort = new System.Windows.Forms.NumericUpDown();
             this.txtSMTPUsername = new System.Windows.Forms.TextBox();
@@ -56,24 +57,22 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.loginsDataSet = new CSharp_LoginSystemSQLCE.loginsDataSet();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new CSharp_LoginSystemSQLCE.loginsDataSetTableAdapters.UsersTableAdapter();
-            this.tableAdapterManager = new CSharp_LoginSystemSQLCE.loginsDataSetTableAdapters.TableAdapterManager();
-            this.usersDataGridView = new System.Windows.Forms.DataGridView();
+            this.userTableAdapter = new CSharp_LoginSystemSQLCE.UsersDataSetTableAdapters.UserTableAdapter();
+            this.tableAdapterManager = new CSharp_LoginSystemSQLCE.UsersDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersDataSet = new CSharp_LoginSystemSQLCE.usersDataSet();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -133,6 +132,7 @@
             // 
             this.txtLoginPassword.Location = new System.Drawing.Point(105, 115);
             this.txtLoginPassword.Name = "txtLoginPassword";
+            this.txtLoginPassword.PasswordChar = '*';
             this.txtLoginPassword.Size = new System.Drawing.Size(130, 20);
             this.txtLoginPassword.TabIndex = 4;
             // 
@@ -144,6 +144,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // tabPage2
             // 
@@ -243,13 +244,28 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.usersDataGridView);
+            this.tabPage3.Controls.Add(this.userDataGridView);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(276, 235);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Database";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // userDataGridView
+            // 
+            this.userDataGridView.AutoGenerateColumns = false;
+            this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.userDataGridView.DataSource = this.userBindingSource;
+            this.userDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.userDataGridView.Name = "userDataGridView";
+            this.userDataGridView.Size = new System.Drawing.Size(276, 235);
+            this.userDataGridView.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -338,65 +354,43 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "SMTP Address: ";
             // 
-            // loginsDataSet
+            // userTableAdapter
             // 
-            this.loginsDataSet.DataSetName = "loginsDataSet";
-            this.loginsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.loginsDataSet;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.userTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = CSharp_LoginSystemSQLCE.loginsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsersTableAdapter = this.usersTableAdapter;
-            // 
-            // usersDataGridView
-            // 
-            this.usersDataGridView.AutoGenerateColumns = false;
-            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.usersDataGridView.DataSource = this.usersBindingSource;
-            this.usersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usersDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.usersDataGridView.Name = "usersDataGridView";
-            this.usersDataGridView.Size = new System.Drawing.Size(276, 235);
-            this.usersDataGridView.TabIndex = 0;
+            this.tableAdapterManager.UpdateOrder = CSharp_LoginSystemSQLCE.UsersDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UserTableAdapter = this.userTableAdapter;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Username";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Username";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Username";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Username";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Password";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Password";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Password";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewTextBoxColumn4
+            // userBindingSource
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.usersDataSet;
+            // 
+            // usersDataSet
+            // 
+            this.usersDataSet.DataSetName = "UsersDataSet";
+            this.usersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Form1
             // 
@@ -413,12 +407,12 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSMTPPort)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,15 +446,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private loginsDataSet loginsDataSet;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private loginsDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
-        private loginsDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView usersDataGridView;
+        private usersDataSet usersDataSet;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private UsersDataSetTableAdapters.UserTableAdapter userTableAdapter;
+        private UsersDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView userDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
 

@@ -22,18 +22,12 @@ namespace CSharp_LoginSystemSQLCE
             InitializeComponent();
         }
 
-        private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.usersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.loginsDataSet);
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'loginsDataSet.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.loginsDataSet.Users);
+            // TODO: This line of code loads data into the 'usersDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.usersDataSet.User);
+
 
         }
 
@@ -50,7 +44,7 @@ namespace CSharp_LoginSystemSQLCE
             Match match = regex.Match(email);
 
             //Loop through Logins Table
-            foreach (DataRow row in loginsDataSet.Users)
+            foreach (DataRow row in usersDataSet.User)
             {
                 //And look for matching usernames
                 if (row.ItemArray[0].Equals(username))
@@ -84,16 +78,16 @@ namespace CSharp_LoginSystemSQLCE
             //If all is well, create the new user!
             else
             {
-                loginsDataSet.UsersRow newUserRow = loginsDataSet.Users.NewUsersRow();
+                usersDataSet.UserRow newUserRow = usersDataSet.User.NewUserRow();
 
-                string EncryptedPass = HashPass(password, email);
+                string EncryptedPass = HashPass(password);
                 newUserRow.Username = username;
                 newUserRow.Password = EncryptedPass;
                 newUserRow.Email = email;
 
-                loginsDataSet.Users.Rows.Add(newUserRow);
+                usersDataSet.User.Rows.Add(newUserRow);
                 txtRegisterUsername.Text = String.Empty;
-               txtRegisterPassword.Text = String.Empty;
+                txtRegisterPassword.Text = String.Empty;
                 txtRegisterConfirmPassword.Text = String.Empty;
                 txtRegisterEmail.Text = String.Empty;
                 MessageBox.Show("Thank you for Registering!");
@@ -109,12 +103,12 @@ namespace CSharp_LoginSystemSQLCE
             }
         }
 
-        public string HashPass(string password, string email)
+        public string HashPass(string password)
         {
             SHA256 sha = new SHA256CryptoServiceProvider();
 
             //compute hash from the bytes of text
-            sha.ComputeHash(ASCIIEncoding.ASCII.GetBytes(password + email));
+            sha.ComputeHash(ASCIIEncoding.ASCII.GetBytes(password));
 
             //get hash result after compute it
             byte[] result = sha.Hash;
@@ -145,6 +139,42 @@ namespace CSharp_LoginSystemSQLCE
         private void btnRegister_Click(object sender, EventArgs e)
         {
             AddUser(txtRegisterUsername.Text, txtRegisterPassword.Text, txtRegisterConfirmPassword.Text, txtRegisterEmail.Text);
+        }
+
+        private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.userBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.usersDataSet);
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            //Locals to hold values
+            string username = txtLoginUsername.Text;
+            string password = HashPass(txtLoginPassword.Text);
+
+
+            //Loop through database
+            foreach (DataRow row in usersDataSet.User)
+            {
+                //And search for Username and Pass that match
+                if (row.ItemArray[0].Equals(username) && row.ItemArray[1].Equals(password))
+                {
+                    txtLoginUsername.Text = String.Empty;
+                    txtLoginPassword.Text = String.Empty;
+                    MessageBox.Show("Login Success");
+                    break;
+                }
+                //If not, then show this message.
+                else
+                {
+                    MessageBox.Show("Username/Password incorrect");
+                    break;
+                }
+            }
+
         }
     }
 }

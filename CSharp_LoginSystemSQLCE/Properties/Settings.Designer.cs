@@ -33,5 +33,16 @@ namespace CSharp_LoginSystemSQLCE.Properties {
                 return ((string)(this["loginsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=\"I:\\Visual Studio\\Projects\\CSharp_LoginSystem_SQLCE\\CSharp_LoginSyste" +
+            "mSQLCE\\Database\\Users\"")]
+        public string UsersConnectionString {
+            get {
+                return ((string)(this["UsersConnectionString"]));
+            }
+        }
     }
 }
