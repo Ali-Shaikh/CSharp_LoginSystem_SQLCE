@@ -389,10 +389,10 @@ namespace CSharp_LoginSystemSQLCE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UsersRow AddUsersRow(long Id, string Username, string Password, string Email) {
+            public UsersRow AddUsersRow(string Username, string Password, string Email) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Username,
                         Password,
                         Email};
@@ -444,12 +444,13 @@ namespace CSharp_LoginSystemSQLCE {
                 base.Columns.Add(this.columnEmail);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnUsername.AllowDBNull = false;
                 this.columnUsername.MaxLength = 52;
                 this.columnPassword.AllowDBNull = false;
-                this.columnPassword.MaxLength = 32;
+                this.columnPassword.MaxLength = 255;
                 this.columnEmail.AllowDBNull = false;
                 this.columnEmail.MaxLength = 100;
             }
